@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_chess/commons/theme.dart';
+import 'package:flutter_chess/views/gamepage/gamepage.dart';
+import 'package:flutter_chess/views/homepage/choice_page.dart';
 import 'package:flutter_chess/views/homepage/homepage.dart';
 
 void main() {
@@ -16,7 +19,13 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Homepage(),
+      theme: appTheme,
+      routes: {
+        '/': (context) => const Homepage(),
+        '/choice': (context) => const ChoicePage(),
+        '/gamepage': (context) => const Gamepage(),
+      },
+      initialRoute: '/',
     );
   }
 }
